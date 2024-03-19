@@ -4,6 +4,8 @@ fun main () {
     s1()
     s2()
     s3()
+    s4()
+    s5()
 }
 
 fun s1() {
@@ -49,3 +51,37 @@ fun whenExam(num: Int) {
         }
     }
 }
+
+fun s4() {
+    var i: Int = 1
+    while (i < 10) {
+        println("i is $i")
+        i++
+    }
+
+    for (j in 1..10) {
+        println("j is $j")
+    }
+
+//    for (k in 1 until 10 step 2) {
+    for (k in 1..<10 step 2) {
+        println("k is $k")
+    }
+
+    val list = listOf(1, 2, 5, 10)
+    for (s in list) {
+        println("s is $s")
+    }
+}
+
+fun s5() {
+    class Human {
+        fun showName(name: String) {
+            println(name)
+        }
+    }
+
+    val human = Human()
+    human.showName("kotlin")
+}
+

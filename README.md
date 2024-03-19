@@ -5,9 +5,9 @@
   2. [変数](#anchor3)
   3. [関数](#anchor4)
   4. [分岐](#anchor5)
-  5. [](#anchor6)
-  6. [](#anchor7)
-  7. [](#anchor8)
+  5. [繰り返し](#anchor6)
+  6. [クラス](#anchor7)
+  7. [継承](#anchor8)
   8. [](#anchor9)
 
 # 1. 基本構文　<a id="anchor1"></a>
@@ -65,9 +65,66 @@ fun displayMessage(message: String): Unit {
 
 ### if文
 ```kt
+if (num < 100) {
+    println("Less than 100")
+} else if (num == 100) {
+    println("Equal to 100")
+} else {
+    println("Greater than 100")
+}
 ```
+
+### when文
+```kt
+when(num) {
+    100 -> {
+        println("Equal to 100")
+    }
+    else -> {
+        println("Undefined value")
+    }
+}
+
+when(num) {
+  num == 100 -> {
+    println("Equal to 100")
+  }
+}
+```
+
 ## 5. 繰り返し　<a id="anchor6"></a>
+```kt
+var i: Int = 1
+while (i < 10) {
+    println("i is $i")
+    i++
+}
+
+for (j in 1..10) {
+    println("j is $j")
+}
+
+for (k in 1..<10 step 2) {
+    println("k is $k")
+}
+
+val list = listOf(1, 2, 5, 10)
+for (s in list) {
+    println("s is $s")
+}
+```
+
 ## 6. クラス　<a id="anchor7"></a>
+```kt
+class Human {
+    fun showName(name: String) {
+        println(name)
+    }
+}
+
+val human = Human()
+human.showName("kotlin")
+```
 ## 7. 継承　<a id="anchor8"></a>
 ## 8. インターフェース　<a id="anchor9"></a>
 ## 9. コレクション　<a id="anchor10"></a>
