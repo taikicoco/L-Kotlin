@@ -8,7 +8,8 @@
   5. [繰り返し](#anchor6)
   6. [クラス](#anchor7)
   7. [継承](#anchor8)
-  8. [](#anchor9)
+  8. [インターフェース](#anchor9)
+  9. [コレクション](#anchor10)
 
 # 1. 基本構文　<a id="anchor1"></a>
 ## 1. Null非許容　<a id="anchor2"></a>
@@ -126,5 +127,72 @@ val human = Human()
 human.showName("kotlin")
 ```
 ## 7. 継承　<a id="anchor8"></a>
+```kt
+open  class Animal (val name: String) {
+    fun showName() = println("name is $name")
+    open fun cries() = println("--")
+}
+
+class Dog(name: String) : Animal(name) {
+    override fun cries() = println("bowwow")
+}
+```
+
+- 継承させたいクラスに`open`の修飾子を付ける
+- 関数にも同様にオーバーライドさせたいものに`open`を付ける
+- 継承はクラス名の後ろに`:クラス名`の形で親クラスを記述する
+
+```kt
+sealed  class Animal (val name: String) {
+    fun showName() = println("name is $name")
+}
+```
+
+- `sealed`を付けると他ファイルのクラスから継承できない
+
 ## 8. インターフェース　<a id="anchor9"></a>
+```kt
+interface Greeter {
+    fun hello()
+}
+
+class GreeterImpl: Greeter {
+    override fun hello() {
+        println("hello")
+    }
+}
+```
+- 継承と同様にクラス名の後ろに`:インターン名`の形で親クラスを記述する
 ## 9. コレクション　<a id="anchor10"></a>
+
+### List
+```kt
+val intList: List<Int> = listOf<Int>(1,2,3)
+println(intList)
+println(intList[1])
+
+val stringList: List<String> = listOf<String>("one", "two", "three")
+println(stringList)
+println(stringList[2])
+
+val immutableList: List<Int> = listOf(1, 2, 3)
+//    immutableList.add(4) // コンパイルエラー
+val mutableList: MutableList<Int> = mutableListOf(1, 2, 3)
+mutableList.add(4)
+println(mutableList)
+```
+
+
+### Map
+```kt
+val map: Map<Int, String> = mapOf(1 to "one", 2 to "two", 3 to "three")
+println(map)
+println(map[1])
+
+println(map.containsKey(3)) // true
+
+val mutableMap: MutableMap<Int, String> = mutableMapOf(1 to "one", 2 to "two", 3 to "three")
+mutableMap[4] = "four"
+println(mutableMap)
+```
+
