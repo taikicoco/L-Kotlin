@@ -1,4 +1,5 @@
 # l-kotlin
+## [Kotlin docs](https://kotlinlang.org/docs/home.html)
 
 1. [基本構文](#anchor1)
 - 1. [Null非許容](#anchor2)
@@ -10,6 +11,8 @@
   7. [継承](#anchor8)
   8. [インターフェース](#anchor9)
   9. [コレクション](#anchor10)
+
+1. [基本構文](#anchor20)
 
 # 1. 基本構文　<a id="anchor1"></a>
 ## 1. Null非許容　<a id="anchor2"></a>
@@ -38,6 +41,13 @@ var name = "Kotlin"
 // 型定義
 val id: Int = 100
 var name: String = "kt"
+
+val c:Int
+c = 2
+
+var x = 5 // `Int` type is inferred
+x += 1
+println("x = $x")
 ```
 - valは変化不可（イミュータブル）
 - varは変化可（ミュータブル）
@@ -61,6 +71,11 @@ fun displayMessage(message: String): Unit {
 }
 ```
 - Unitという何もないこと表す型があり、明示的に戻り値の型として書く事ができる
+
+```kt
+fun sum(a: Int, b: Int) = a + b
+```
+- 関数を式にすることができる
 
 ## 4. 分岐　<a id="anchor5"></a>
 
@@ -196,3 +211,12 @@ mutableMap[4] = "four"
 println(mutableMap)
 ```
 
+# 2. データクラス　<a id="anchor20"></a>
+
+> データクラスの定義
+```kt
+data class User(val id: Int, var name: String)
+```
+- componentN
+- copy
+が追加
