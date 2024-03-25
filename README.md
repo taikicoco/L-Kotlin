@@ -12,7 +12,7 @@
   8. [インターフェース](#anchor9)
   9. [コレクション](#anchor10)
 
-1. [基本構文](#anchor20)
+1. [データクラス](#anchor20)
 
 # 1. 基本構文　<a id="anchor1"></a>
 ## 1. Null非許容　<a id="anchor2"></a>
